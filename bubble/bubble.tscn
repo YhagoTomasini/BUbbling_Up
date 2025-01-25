@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjkpdgocrjw"]
+
+[ext_resource type="Script" path="res://bubble/bubble.gd" id="1_lcrgs"]
+[ext_resource type="Texture2D" uid="uid://elysc3etitwg" path="res://assets/icon.svg" id="2_kff4k"]
+[ext_resource type="PackedScene" uid="uid://di4smmqejy1rs" path="res://bubble/floatComponent.tscn" id="3_y01sx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sra56"]
+radius = 16.1245
+
+[node name="bubbleScene" type="Node2D"]
+
+[node name="bubble" type="CharacterBody2D" parent="." node_paths=PackedStringArray("floatComponent")]
+script = ExtResource("1_lcrgs")
+floatComponent = NodePath("FloatComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="bubble"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kff4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
+shape = SubResource("CircleShape2D_sra56")
+
+[node name="FloatComponent" parent="bubble" instance=ExtResource("3_y01sx")]
