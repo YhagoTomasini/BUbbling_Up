@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d1cqsgmx3cfk3"]
+
+[node name="GravityComponent" type="Node"]
