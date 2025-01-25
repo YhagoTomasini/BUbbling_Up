@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="2_hhaak"]
 [ext_resource type="Texture2D" uid="uid://elysc3etitwg" path="res://assets/icon.svg" id="3_r4x10"]
 [ext_resource type="Script" path="res://player/scripts/stateMachine/stateMachine.gd" id="4_j1pb4"]
-[ext_resource type="Script" path="res://player/scripts/stateMachine/states/playerGround.gd" id="5_q1e0n"]
+[ext_resource type="Script" path="res://player/scripts/stateMachine/states/playerWalk.gd" id="5_q1e0n"]
 [ext_resource type="Script" path="res://player/scripts/stateMachine/states/playerIdle.gd" id="6_vqnh3"]
-[ext_resource type="Script" path="res://player/scripts/stateMachine/states/playerAir.gd" id="7_5t1vr"]
+[ext_resource type="Script" path="res://player/playerJump.gd" id="7_5t1vr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12g20"]
 height = 32.0

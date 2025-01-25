@@ -1,7 +1,7 @@
 class_name PlayerCharacter extends CharacterBody2D
 
-var input_direction = Vector2.ZERO
-@export var speed: float = 200
+@export var jumpStrength = 300
+@export var speed: float = 100
 @export_subgroup("Nodes")
 @export var gravityComponent: GravityComponent
 

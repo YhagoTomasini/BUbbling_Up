@@ -1,11 +1,12 @@
-extends PlayerState
+class_name PlayerIdle extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	pass
+	player.velocity = Vector2.ZERO
 
-func physics_update(_delta: float) -> void:
-	if Input.is_action_pressed("left") or Input.is_action_pressed("right") :
-		finished.emit(WALKING)
+func handle_input(event: InputEvent) -> void:
+	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		emit_signal("finished", GROUND)
+	elif Input.is_action_pressed("jump"):
+		emit_signal("finished", AIR)
 
-func exit():
-	pass
+	

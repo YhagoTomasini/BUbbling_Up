@@ -1,8 +1,8 @@
 class_name PlayerState extends State
 
 const IDLE = "PlayerIdle"
-const WALKING = "PlayerWalk"
-const JUMPING = "PlayerJump"
+const GROUND = "PlayerGround"
+const AIR = "PlayerAir"
 
 var player: PlayerCharacter
 
