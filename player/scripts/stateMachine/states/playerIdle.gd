@@ -6,7 +6,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 func handle_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		emit_signal("finished", GROUND)
-	elif Input.is_action_pressed("jump"):
+	elif Input.is_action_just_pressed("jump"):
 		emit_signal("finished", AIR)
 
 	

@@ -1,4 +1,4 @@
-class_name PlayergROUND extends PlayerState
+class_name PlayerGround extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	pass
