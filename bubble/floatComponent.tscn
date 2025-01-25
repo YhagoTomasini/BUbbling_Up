@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://di4smmqejy1rs"]
 
-[ext_resource type="Script" path="res://bubble/float_component.gd" id="1_xpw4m"]
+[ext_resource type="Script" path="res://bubble/scripts/float_component.gd" id="1_xpw4m"]
 
 [node name="FloatComponent" type="Node"]
 script = ExtResource("1_xpw4m")

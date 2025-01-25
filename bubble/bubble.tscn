@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjkpdgocrjw"]
 
-[ext_resource type="Script" path="res://bubble/bubble.gd" id="1_lcrgs"]
+[ext_resource type="Script" path="res://bubble/scripts/bubble.gd" id="1_lcrgs"]
 [ext_resource type="Texture2D" uid="uid://elysc3etitwg" path="res://assets/icon.svg" id="2_kff4k"]
 [ext_resource type="PackedScene" uid="uid://di4smmqejy1rs" path="res://bubble/floatComponent.tscn" id="3_y01sx"]
 
