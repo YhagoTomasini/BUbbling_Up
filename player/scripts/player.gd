@@ -1,16 +1,22 @@
 extends CharacterBody2D
+class_name Player
 
+@export var gravity = 500
+@export var speed = 150
+var jump_force = 250
 
-@export_subgroup("Nodes")
-@export var input_component: InputComponent
-@export var gravity_component: GravityComponent
-@export var movement_component: MovementComponent
-@export var jump_component: JumpComponent
-
-
-func _physics_process(delta: float) -> void:
-	gravity_component.handleGravity(self, delta)
-	movement_component.handle_horizontal_movement(self, input_component.input_horizontal)
-	jump_component.handle_jump(self, input_component.get_jump_input())
-
+func _physics_process(delta):
+	if is_on_floor() == false:
+		velocity.y += gravity * delta
+		
+	if Input.is_action_just_pressed("jump") && is_on_floor():
+		jump(jump_force)
+		
+	if velocity.y >= 500:
+		velocity.y = 500
+	var direction = Input.get_axis("left", "right")
+	velocity.x = direction  * speed 
 	move_and_slide()
+	
+func jump(force):
+	velocity.y = -force
