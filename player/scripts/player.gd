@@ -1,20 +1,16 @@
-class_name PlayerCharacter extends CharacterBody2D
+extends CharacterBody2D
 
-@export var jumpStrength = 300
-@export var speed: float = 100
+
 @export_subgroup("Nodes")
-@export var gravityComponent: GravityComponent
-var isJumping: bool = false
+@export var input_component: InputComponent
+@export var gravity_component: GravityComponent
+@export var movement_component: MovementComponent
+@export var jump_component: JumpComponent
 
-
-	
-func _process(delta):
-	if(Input.is_action_pressed("jump")):
-		isJumping = true
-	else:
-		isJumping = false
-	print(isJumping)
 
 func _physics_process(delta: float) -> void:
-	gravityComponent.handleGravity(self, delta)
+	gravity_component.handleGravity(self, delta)
+	movement_component.handle_horizontal_movement(self, input_component.input_horizontal)
+	jump_component.handle_jump(self, input_component.get_jump_input())
+
 	move_and_slide()
