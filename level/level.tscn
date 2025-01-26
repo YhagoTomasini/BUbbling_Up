@@ -49,6 +49,9 @@ timerPlacer3 = NodePath("TimerBubblePlacer3")
 [node name="Wind" parent="." instance=ExtResource("3_w1auq")]
 position = Vector2(191, 118)
 
+[node name="CollisionShape2D" parent="Wind/Area2D" index="0"]
+position = Vector2(-36, -162)
+
 [node name="playerScene" parent="." instance=ExtResource("1_hvpdy")]
 position = Vector2(161, 91)
 
