@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://6ex7gcrym3iy"]
+[gd_scene load_steps=9 format=4 uid="uid://6ex7gcrym3iy"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
@@ -35,6 +35,9 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_wxg07")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wndbo"]
+size = Vector2(12, 180)
+
 [node name="level" type="Node2D" node_paths=PackedStringArray("timerPlacer1", "timerPlacer2", "timerPlacer3")]
 script = ExtResource("1_85s83")
 bubble_scene = ExtResource("3_l42tb")
@@ -61,6 +64,20 @@ wait_time = 2.0
 
 [node name="TimerBubblePlacer3" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="leftWall" type="StaticBody2D" parent="."]
+position = Vector2(-3, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftWall"]
+position = Vector2(-4, 26)
+shape = SubResource("RectangleShape2D_wndbo")
+
+[node name="rightWall" type="StaticBody2D" parent="."]
+position = Vector2(-6, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightWall"]
+position = Vector2(332, -49)
+shape = SubResource("RectangleShape2D_wndbo")
 
 [connection signal="timeout" from="TimerBubblePlacer" to="." method="_on_timer_bubble_placer_timeout"]
 [connection signal="timeout" from="TimerBubblePlacer2" to="." method="_on_timer_bubble_placer_2_timeout"]
