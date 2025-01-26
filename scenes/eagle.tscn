@@ -47,4 +47,4 @@ animations = [{
 
 [node name="Eagle" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ph51m")
-frame_progress = 0.798579
+frame_progress = 0.941533

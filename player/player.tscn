@@ -187,12 +187,14 @@ height = 32.0
 
 [node name="playerCharacter" type="CharacterBody2D"]
 script = ExtResource("2_hhaak")
+gravity = null
+speed = null
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, 0)
 sprite_frames = SubResource("SpriteFrames_hbt48")
 animation = &"Idle"
-frame_progress = 0.584044
+frame_progress = 0.402131
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_12g20")

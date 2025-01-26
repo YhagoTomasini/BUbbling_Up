@@ -68,4 +68,4 @@ animations = [{
 [node name="Mommy" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_3rws1")
 animation = &"Captured"
-frame_progress = 0.675612
+frame_progress = 0.115714

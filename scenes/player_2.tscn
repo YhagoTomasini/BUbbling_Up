@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cu2n12cgjcoln"]
+[gd_scene load_steps=15 format=3 uid="uid://cu2n12cgjcoln"]
 
 [ext_resource type="Texture2D" uid="uid://cxdjemdnkb07u" path="res://designDocs/P2 anims/P2-Bubbling.png" id="1_57n8t"]
 [ext_resource type="Texture2D" uid="uid://dvhq4ij7gyqng" path="res://designDocs/P2 anims/P2-Idle.png" id="2_rq3mq"]
+[ext_resource type="Script" path="res://scenes/player_2.gd" id="3_nnmrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yk2es"]
 atlas = ExtResource("1_57n8t")
@@ -63,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Casting",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -87,6 +88,8 @@ animations = [{
 }]
 
 [node name="player2" type="AnimatedSprite2D"]
+position = Vector2(52, 43)
 sprite_frames = SubResource("SpriteFrames_2vmjo")
-animation = &"Idle"
-frame_progress = 0.344618
+animation = &"Casting"
+frame_progress = 0.859251
+script = ExtResource("3_nnmrk")

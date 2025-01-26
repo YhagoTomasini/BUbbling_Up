@@ -13,12 +13,14 @@ texture = ExtResource("1_qmxx2")
 
 [node name="Eagle" parent="." instance=ExtResource("2_e4l3y")]
 position = Vector2(284, 37)
-frame_progress = 0.597022
+frame_progress = 0.607804
 
 [node name="Mommy" parent="." instance=ExtResource("3_63cse")]
 position = Vector2(154, 127)
 animation = &"Idle"
-frame_progress = 0.466408
+frame_progress = 0.47719
 
 [node name="playerCharacter" parent="." instance=ExtResource("4_60e2s")]
 position = Vector2(71, 141)
+gravity = null
+speed = null
