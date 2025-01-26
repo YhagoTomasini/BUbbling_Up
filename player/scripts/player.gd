@@ -15,10 +15,19 @@ var friction = 800
 var wind_force = 0
 var wind_direction = 0
 
+@onready var anim = $Sprite2D
+
 func _physics_process(delta):
 	# Apply gravity if not on the floor
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+	elif velocity.x != 0:
+		anim.play("Walk")
+	if velocity.y > 0:
+		anim.play("Falling")
+	elif velocity.y < 0:
+		anim.play("Jump")
 
 	# Handle jump
 	if Input.is_action_pressed("jump") and is_jumping and jump_hold:
@@ -42,6 +51,11 @@ func _physics_process(delta):
 			velocity.x = direction * speed
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, friction * delta)
+
+		if direction:
+			anim.scale.x = -1 if direction < 0 else 1
+		elif is_on_floor() == true:
+			anim.play("Idle")
 
 	# Apply continuous wind force
 	if wind_direction != 0:
