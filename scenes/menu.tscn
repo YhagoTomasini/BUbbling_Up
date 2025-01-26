@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://m5xbel3jbelr"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_amse8"]
+[ext_resource type="Texture2D" uid="uid://ca0vg8xi3r14m" path="res://designDocs/BK/menu.png" id="2_71i6v"]
+[ext_resource type="FontFile" uid="uid://mxak6kb2321t" path="res://designDocs/BK/Tiny5/Tiny5-Regular.ttf" id="3_wqm7a"]
+
+[sub_resource type="Theme" id="Theme_88b6f"]
+default_font = ExtResource("3_wqm7a")
+default_font_size = 24
+
+[node name="MEnu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_amse8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_71i6v")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 109.0
+offset_right = 305.0
+offset_bottom = 144.0
+theme = SubResource("Theme_88b6f")
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 22.0
+offset_right = 308.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("3_wqm7a")
+theme_override_font_sizes/font_size = 24
+text = "BUBBLING"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 211.0
+offset_top = 38.0
+offset_right = 274.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("3_wqm7a")
+theme_override_font_sizes/font_size = 50
+text = "UP"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
