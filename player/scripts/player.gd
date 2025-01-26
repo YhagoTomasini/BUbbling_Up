@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var gravity = 500
-@export var speed = 150
+@export var speed = 100
 var jump_force = 250
 
 var is_knocked_back = false
@@ -16,6 +16,9 @@ var recovery_timer = 0.0
 func _physics_process(delta):
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
+	
+	elif velocity.x != 0:
+		anim.play("Walk")
 		
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		jump(jump_force)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ti86oqg8e4e5"
-path="res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"
+uid="uid://bx6icdwxliyqe"
+path="res://.godot/imported/Tronco-middle.png-d29e326d137d5884c3c34519d5d51d44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/branch.png"
-dest_files=["res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"]
+source_file="res://designDocs/BK/Tronco-middle.png"
+dest_files=["res://.godot/imported/Tronco-middle.png-d29e326d137d5884c3c34519d5d51d44.ctex"]
 
 [params]
 

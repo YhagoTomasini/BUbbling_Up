@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ti86oqg8e4e5"
-path="res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"
+uid="uid://dlqqoh68fqajm"
+path="res://.godot/imported/bubble.png-e29e9e3b2468b3f405956ac5513433f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/branch.png"
-dest_files=["res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"]
+source_file="res://designDocs/bubble/bubble.png"
+dest_files=["res://.godot/imported/bubble.png-e29e9e3b2468b3f405956ac5513433f7.ctex"]
 
 [params]
 
