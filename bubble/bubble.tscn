@@ -21,3 +21,8 @@ texture = ExtResource("2_kff4k")
 shape = SubResource("CircleShape2D_sra56")
 
 [node name="FloatComponent" parent="bubble" instance=ExtResource("3_y01sx")]
+
+[node name="Timer" type="Timer" parent="bubble"]
+process_callback = 0
+
+[connection signal="timeout" from="bubble/Timer" to="bubble" method="_on_timer_timeout"]
