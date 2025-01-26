@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cud6js8uosrl"]
+
+[ext_resource type="Texture2D" uid="uid://bakpfrlg0yon0" path="res://designDocs/BK/ground.png" id="1_qmxx2"]
+[ext_resource type="PackedScene" uid="uid://7wtpol48qm2d" path="res://scenes/eagle.tscn" id="2_e4l3y"]
+[ext_resource type="PackedScene" uid="uid://sd2f5sljqnh6" path="res://scenes/mommy.tscn" id="3_63cse"]
+[ext_resource type="PackedScene" uid="uid://dbrw2tmrd27fh" path="res://player/player.tscn" id="4_60e2s"]
+
+[node name="Cinematic" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(160, 77)
+texture = ExtResource("1_qmxx2")
+
+[node name="Eagle" parent="." instance=ExtResource("2_e4l3y")]
+position = Vector2(284, 37)
+frame_progress = 0.597022
+
+[node name="Mommy" parent="." instance=ExtResource("3_63cse")]
+position = Vector2(154, 127)
+animation = &"Idle"
+frame_progress = 0.466408
+
+[node name="playerCharacter" parent="." instance=ExtResource("4_60e2s")]
+position = Vector2(71, 141)
