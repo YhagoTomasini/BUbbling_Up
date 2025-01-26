@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://6ex7gcrym3iy"]
+[gd_scene load_steps=8 format=4 uid="uid://6ex7gcrym3iy"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
 [ext_resource type="PackedScene" uid="uid://dbrw2tmrd27fh" path="res://player/player.tscn" id="1_hvpdy"]
 [ext_resource type="PackedScene" uid="uid://bjkpdgocrjw" path="res://bubble/bubble.tscn" id="3_l42tb"]
+[ext_resource type="Script" path="res://level/camera.gd" id="5_kthyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxg07"]
 texture = ExtResource("1_e30dx")
@@ -44,3 +45,7 @@ position = Vector2(161, 91)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAA=")
 tile_set = SubResource("TileSet_hrven")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 102)
+script = ExtResource("5_kthyn")
