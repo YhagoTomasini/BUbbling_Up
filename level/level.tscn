@@ -100,6 +100,8 @@ texture = SubResource("CanvasTexture_ihb1j")
 
 [node name="playerScene" parent="." instance=ExtResource("1_hvpdy")]
 position = Vector2(161, 91)
+gravity = 500
+speed = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 102)

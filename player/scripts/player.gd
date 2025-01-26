@@ -13,6 +13,8 @@ var is_recovering = false
 var recovery_time = 0.05
 var recovery_timer = 0.0
 
+@onready var anim = $Sprite2D
+
 func _physics_process(delta):
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
@@ -26,6 +28,11 @@ func _physics_process(delta):
 	if velocity.y >= 500:
 		velocity.y = 500
 	
+	if velocity.y > 0:
+		anim.play("Falling")
+	elif velocity.y < 0:
+		anim.play("Jump")
+	
 	if is_knocked_back:
 		knockback_timer -= delta
 		if knockback_timer <= 0:
@@ -38,7 +45,12 @@ func _physics_process(delta):
 			is_recovering = false
 	else:
 		var direction = Input.get_axis("left", "right")
-		velocity.x = direction  * speed 
+		velocity.x = direction  * speed
+		
+		if direction:
+			anim.scale.x = -1 if direction < 0 else 1
+		elif is_on_floor() == true:
+			anim.play("Idle")
 	
 	move_and_slide()
 
