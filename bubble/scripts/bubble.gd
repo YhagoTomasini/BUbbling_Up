@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var timer = $Timer
 @onready var bounce_timer = $"../BounceTimer"
 
+@onready var sprite = $Sprite2D
+
 var wind_force = 0  
 var wind_direction = 0  
 
@@ -25,6 +27,7 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
+		sprite.visible = false
 		# Calculate and apply the bounce direction
 		var normal = (area.global_position - global_position).normalized()
 		velocity = velocity.bounce(normal) * 1.5  # Adjust bounce multiplier as needed
