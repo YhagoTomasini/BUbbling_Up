@@ -167,6 +167,10 @@ process_callback = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
 shape = SubResource("CapsuleShape2D_38iyp")
 
+[node name="BounceTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
 [connection signal="animation_finished" from="bubble/Sprite2D" to="bubble" method="_on_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="bubble/Area2D" to="bubble" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="bubble/Area2D" to="bubble" method="_on_area_2d_area_exited"]
