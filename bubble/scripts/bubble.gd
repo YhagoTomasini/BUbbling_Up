@@ -19,3 +19,7 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		queue_free()  
+	if area.is_in_group("wind"):
+		var is_wind_left = area.get("direction") 
+		var wind_direction = -1 if is_wind_left else 1
+		velocity.x += wind_direction * 100

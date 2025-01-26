@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://6ex7gcrym3iy"]
+[gd_scene load_steps=10 format=4 uid="uid://6ex7gcrym3iy"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
 [ext_resource type="PackedScene" uid="uid://dbrw2tmrd27fh" path="res://player/player.tscn" id="1_hvpdy"]
 [ext_resource type="PackedScene" uid="uid://bjkpdgocrjw" path="res://bubble/bubble.tscn" id="3_l42tb"]
+[ext_resource type="PackedScene" uid="uid://qld63r3xytlm" path="res://wind/wind.tscn" id="3_w1auq"]
 [ext_resource type="Script" path="res://level/camera.gd" id="5_kthyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxg07"]
@@ -45,6 +46,9 @@ timerPlacer1 = NodePath("TimerBubblePlacer")
 timerPlacer2 = NodePath("TimerBubblePlacer2")
 timerPlacer3 = NodePath("TimerBubblePlacer3")
 
+[node name="Wind" parent="." instance=ExtResource("3_w1auq")]
+position = Vector2(191, 118)
+
 [node name="playerScene" parent="." instance=ExtResource("1_hvpdy")]
 position = Vector2(161, 91)
 
@@ -82,3 +86,5 @@ shape = SubResource("RectangleShape2D_wndbo")
 [connection signal="timeout" from="TimerBubblePlacer" to="." method="_on_timer_bubble_placer_timeout"]
 [connection signal="timeout" from="TimerBubblePlacer2" to="." method="_on_timer_bubble_placer_2_timeout"]
 [connection signal="timeout" from="TimerBubblePlacer3" to="." method="_on_timer_bubble_placer_3_timeout"]
+
+[editable path="Wind"]
