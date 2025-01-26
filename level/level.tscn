@@ -36,7 +36,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_wxg07")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wndbo"]
-size = Vector2(12, 180)
+size = Vector2(12, 324)
 
 [node name="level" type="Node2D" node_paths=PackedStringArray("timerPlacer1", "timerPlacer2", "timerPlacer3")]
 script = ExtResource("1_85s83")
@@ -49,7 +49,7 @@ timerPlacer3 = NodePath("TimerBubblePlacer3")
 position = Vector2(161, 91)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAAHAAEAAQADAAAAAAAIAAEAAQADAAAAAAABAP//AQADAAAAAAACAP//AQADAAAAAAAHAP7/AQADAAAAAAAIAP7/AQADAAAAAAACAAMAAQADAAAAAAADAAMAAQADAAAAAAA=")
 tile_set = SubResource("TileSet_hrven")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -69,14 +69,14 @@ wait_time = 2.0
 position = Vector2(-3, 75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftWall"]
-position = Vector2(-4, 26)
+position = Vector2(-4, -46)
 shape = SubResource("RectangleShape2D_wndbo")
 
 [node name="rightWall" type="StaticBody2D" parent="."]
 position = Vector2(-6, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightWall"]
-position = Vector2(332, -49)
+position = Vector2(332, -119)
 shape = SubResource("RectangleShape2D_wndbo")
 
 [connection signal="timeout" from="TimerBubblePlacer" to="." method="_on_timer_bubble_placer_timeout"]

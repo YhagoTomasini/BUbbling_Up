@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var gravity = 700
-@export var speed = 175
-var jump_force = 250
+@export var speed = 125
+var jump_force = 350
 
 var friction = 800
 
