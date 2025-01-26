@@ -58,7 +58,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bubble"):
 		# Calculate the bounce direction
 		var normal = (position - area.global_position).normalized()
-		velocity = velocity.bounce(normal) * 1.5  # Adjust the multiplier for bounce strength
+		velocity = velocity.bounce(normal) * 3.5  # Adjust the multiplier for bounce strength
 
 		
 func _on_area_2d_area_exited(area: Area2D) -> void:
