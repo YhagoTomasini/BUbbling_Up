@@ -8,11 +8,15 @@ var max_bubbles: int = 3
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		spawn_bubble(event.position)
+		print(current_bubbles)
 
 func spawn_bubble(position: Vector2) -> void:
 	# Check if the number of bubbles has reached the limit
 	if current_bubbles.size() >= max_bubbles:
-		return
+		var oldest_bubble = current_bubbles[0] # Get the first bubble in the array
+		if is_instance_valid(oldest_bubble):
+			oldest_bubble.queue_free() # Remove it from the scene tree
+		current_bubbles.remove_at(0) # Remove it from the tracking array
 
 	# Instantiate the bubble
 	var bubble = bubble_scene.instantiate()
