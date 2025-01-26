@@ -17,7 +17,9 @@ floatComponent = NodePath("FloatComponent")
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_kff4k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
+[node name="Area2D" type="Area2D" parent="bubble" groups=["bubble"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble/Area2D"]
 shape = SubResource("CircleShape2D_sra56")
 
 [node name="FloatComponent" parent="bubble" instance=ExtResource("3_y01sx")]
@@ -25,4 +27,8 @@ shape = SubResource("CircleShape2D_sra56")
 [node name="Timer" type="Timer" parent="bubble"]
 process_callback = 0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
+shape = SubResource("CircleShape2D_sra56")
+
+[connection signal="area_entered" from="bubble/Area2D" to="bubble" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="bubble/Timer" to="bubble" method="_on_timer_timeout"]
