@@ -35,9 +35,12 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_wxg07")
 
-[node name="level" type="Node2D"]
+[node name="level" type="Node2D" node_paths=PackedStringArray("timerPlacer1", "timerPlacer2", "timerPlacer3")]
 script = ExtResource("1_85s83")
 bubble_scene = ExtResource("3_l42tb")
+timerPlacer1 = NodePath("TimerBubblePlacer")
+timerPlacer2 = NodePath("TimerBubblePlacer2")
+timerPlacer3 = NodePath("TimerBubblePlacer3")
 
 [node name="playerScene" parent="." instance=ExtResource("1_hvpdy")]
 position = Vector2(161, 91)
@@ -49,3 +52,16 @@ tile_set = SubResource("TileSet_hrven")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 102)
 script = ExtResource("5_kthyn")
+
+[node name="TimerBubblePlacer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="TimerBubblePlacer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="TimerBubblePlacer3" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="TimerBubblePlacer" to="." method="_on_timer_bubble_placer_timeout"]
+[connection signal="timeout" from="TimerBubblePlacer2" to="." method="_on_timer_bubble_placer_2_timeout"]
+[connection signal="timeout" from="TimerBubblePlacer3" to="." method="_on_timer_bubble_placer_3_timeout"]
