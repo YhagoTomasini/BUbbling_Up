@@ -20,3 +20,10 @@ func _physics_process(delta):
 	
 func jump(force):
 	velocity.y = -force
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bubble"):
+		var force_direction = sign(velocity.x) * -1  
+		velocity.x = 300 * force_direction  
+		velocity.y = -300  
