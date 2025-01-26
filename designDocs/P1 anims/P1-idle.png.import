@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b6gilgg5b8ptx"
-=======
-uid="uid://q7osxomap8sl"
->>>>>>> 0e8c125b802fa2cae1f293025bdd7c6fed1a79a8
-path="res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"
+uid="uid://dpvl2v8rryspg"
+path="res://.godot/imported/P1-idle.png-8caa4b102455804a2cac6940bc5c8ae5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/bush.png"
-dest_files=["res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"]
+source_file="res://designDocs/P1 anims/P1-idle.png"
+dest_files=["res://.godot/imported/P1-idle.png-8caa4b102455804a2cac6940bc5c8ae5.ctex"]
 
 [params]
 

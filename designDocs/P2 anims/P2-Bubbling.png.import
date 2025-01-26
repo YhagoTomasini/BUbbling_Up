@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b6gilgg5b8ptx"
-=======
-uid="uid://q7osxomap8sl"
->>>>>>> 0e8c125b802fa2cae1f293025bdd7c6fed1a79a8
-path="res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"
+uid="uid://cxdjemdnkb07u"
+path="res://.godot/imported/P2-Bubbling.png-27d6dc8f14be5beec3d10a17845ffcab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/bush.png"
-dest_files=["res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"]
+source_file="res://designDocs/P2 anims/P2-Bubbling.png"
+dest_files=["res://.godot/imported/P2-Bubbling.png-27d6dc8f14be5beec3d10a17845ffcab.ctex"]
 
 [params]
 

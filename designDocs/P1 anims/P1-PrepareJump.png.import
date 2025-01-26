@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b6gilgg5b8ptx"
-=======
-uid="uid://q7osxomap8sl"
->>>>>>> 0e8c125b802fa2cae1f293025bdd7c6fed1a79a8
-path="res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"
+uid="uid://v6h25a32hwhs"
+path="res://.godot/imported/P1-PrepareJump.png-f7a13ee9ddce1a3bc686225904203f35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/bush.png"
-dest_files=["res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"]
+source_file="res://designDocs/P1 anims/P1-PrepareJump.png"
+dest_files=["res://.godot/imported/P1-PrepareJump.png-f7a13ee9ddce1a3bc686225904203f35.ctex"]
 
 [params]
 

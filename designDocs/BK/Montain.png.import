@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b6gilgg5b8ptx"
-=======
-uid="uid://q7osxomap8sl"
->>>>>>> 0e8c125b802fa2cae1f293025bdd7c6fed1a79a8
-path="res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"
+uid="uid://bhuq7xkcsuxt2"
+path="res://.godot/imported/Montain.png-1b6f283f785673e23b683c56656d32be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/bush.png"
-dest_files=["res://.godot/imported/bush.png-53abb391a2c5e3bc178fa2b781530d81.ctex"]
+source_file="res://designDocs/BK/Montain.png"
+dest_files=["res://.godot/imported/Montain.png-1b6f283f785673e23b683c56656d32be.ctex"]
 
 [params]
 
