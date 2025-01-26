@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjkpdgocrjw"]
+[gd_scene load_steps=25 format=3 uid="uid://bjkpdgocrjw"]
 
 [ext_resource type="Script" path="res://bubble/scripts/bubble.gd" id="1_lcrgs"]
 [ext_resource type="Texture2D" uid="uid://dlqqoh68fqajm" path="res://designDocs/bubble/bubble.png" id="2_1kwpr"]
@@ -140,6 +140,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_sra56"]
 radius = 13.0384
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38iyp"]
+radius = 11.0
+height = 22.0
+
 [node name="bubbleScene" type="Node2D"]
 
 [node name="bubble" type="CharacterBody2D" parent="." node_paths=PackedStringArray("floatComponent")]
@@ -161,7 +165,7 @@ shape = SubResource("CircleShape2D_sra56")
 process_callback = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
-shape = SubResource("CircleShape2D_sra56")
+shape = SubResource("CapsuleShape2D_38iyp")
 
 [connection signal="animation_finished" from="bubble/Sprite2D" to="bubble" method="_on_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="bubble/Area2D" to="bubble" method="_on_area_2d_area_entered"]
