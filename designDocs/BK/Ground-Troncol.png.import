@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ti86oqg8e4e5"
-path="res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"
+uid="uid://csk6qf2lpdfts"
+path="res://.godot/imported/Ground-Troncol.png-ce3c316d7457cd967bee0f4c727d1d90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://designDocs/tilemap/branch.png"
-dest_files=["res://.godot/imported/branch.png-80c663fc1df453367a239e0cb4ba85cb.ctex"]
+source_file="res://designDocs/BK/Ground-Troncol.png"
+dest_files=["res://.godot/imported/Ground-Troncol.png-ce3c316d7457cd967bee0f4c727d1d90.ctex"]
 
 [params]
 
