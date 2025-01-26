@@ -3,6 +3,8 @@ extends AnimatedSprite2D
 @export var floatAmplitude: float = 5.0 
 @export var floatSpeed: float = 2.0 
 
+@onready var p1 = $".."
+
 var _initial_position: Vector2 
 var _time: float = 0.0         
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://6ex7gcrym3iy"]
+[gd_scene load_steps=24 format=4 uid="uid://6ex7gcrym3iy"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dmbhvnuos8hoj" path="res://designDocs/tilemap/bush.png" id="7_rxlnl"]
 [ext_resource type="Texture2D" uid="uid://be78gs8x1xbby" path="res://designDocs/tilemap/clouds.png" id="8_kooqt"]
 [ext_resource type="Texture2D" uid="uid://dtg3sllfl1l1l" path="res://designDocs/BK/nuvens-back.png" id="9_ogpjs"]
+[ext_resource type="PackedScene" uid="uid://cu2n12cgjcoln" path="res://scenes/player_2.tscn" id="11_vftwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej34b"]
 size = Vector2(317, 83)
@@ -246,6 +247,9 @@ tile_set = SubResource("TileSet_hrven")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 102)
 script = ExtResource("5_kthyn")
+
+[node name="player2" parent="Camera2D" instance=ExtResource("11_vftwx")]
+position = Vector2(117, -62)
 
 [node name="TimerBubblePlacer" type="Timer" parent="."]
 wait_time = 3.0
