@@ -5,6 +5,8 @@ class_name Player
 @export var speed = 150
 var jump_force = 250
 
+var friction = 800
+
 var is_knocked_back = false
 var knockback_time = 0.3
 var knockback_timer = 0.0
@@ -35,7 +37,10 @@ func _physics_process(delta):
 			is_recovering = false
 	else:
 		var direction = Input.get_axis("left", "right")
-		velocity.x = direction  * speed 
+		if direction != 0:
+			velocity.x = direction  * speed
+		elif is_on_floor():
+			velocity.x = move_toward(velocity.x, 0, friction * delta)
 	
 	move_and_slide()
 
@@ -47,5 +52,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var force_direction = sign(velocity.x) * -1  
 		velocity.x = 300 * force_direction  
 		velocity.y = -300
-		is_knocked_back = true
+		is_knocked_back = true  
 		knockback_timer = knockback_time
