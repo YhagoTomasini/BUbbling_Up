@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://6ex7gcrym3iy"]
+[gd_scene load_steps=15 format=4 uid="uid://6ex7gcrym3iy"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://level/camera.gd" id="5_kthyn"]
 [ext_resource type="Texture2D" uid="uid://bx6icdwxliyqe" path="res://designDocs/BK/Tronco-middle.png" id="6_l8wf4"]
 [ext_resource type="Texture2D" uid="uid://dtg3sllfl1l1l" path="res://designDocs/BK/nuvens-back.png" id="9_ogpjs"]
+[ext_resource type="PackedScene" uid="uid://qld63r3xytlm" path="res://wind/wind.tscn" id="11_qsvud"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ihb1j"]
 specular_color = Color(4.81308e-08, 0.24354, 0.243951, 1)
@@ -104,3 +105,11 @@ position = Vector2(161, 91)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 102)
 script = ExtResource("5_kthyn")
+
+[node name="Wind" parent="." instance=ExtResource("11_qsvud")]
+position = Vector2(205, 131)
+
+[node name="Area2D" parent="Wind" index="0"]
+is_wind_left = true
+
+[editable path="Wind"]
