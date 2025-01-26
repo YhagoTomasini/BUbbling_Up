@@ -3,28 +3,34 @@ extends CharacterBody2D
 @export_subgroup("Nodes")
 @export var floatComponent: FloatComponent
 
-@onready var anim = $Sprite2D
-@onready var collider = $CollisionShape2D
-@onready var collider2 = $Area2D/CollisionShape2D
 @onready var timer = $Timer
+
+var wind_force = 0  
+var wind_direction = 0  
 
 func _ready() -> void:
 	$Timer.start(1)
-	anim.play("Bubbling")
 
 func _physics_process(delta: float) -> void:
 	floatComponent.handleFloat(self, delta)
+
+	if wind_direction != 0:
+		velocity.x += wind_force * wind_direction * delta
+
 	move_and_slide()
 
 func _on_timer_timeout() -> void:
-	anim.play("Popping")
-	await get_tree().create_timer(0.5).timeout
 	queue_free()
-	
-
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		anim.play("Popping") 
-		await get_tree().create_timer(0.5).timeout
 		queue_free()
+	if area.is_in_group("wind"):
+		var is_wind_left = area.get("is_wind_left") 
+		wind_direction = 1 if is_wind_left else -1
+		wind_force = 500  
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("wind"):
+		wind_direction = 0
+		wind_force = 0

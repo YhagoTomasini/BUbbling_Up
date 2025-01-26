@@ -18,5 +18,3 @@ func acquire_target():
 	if player_nodes.size() > 0:
 		var player = player_nodes[0] as Node2D
 		target_position = player.global_position
-		
-# bruh
