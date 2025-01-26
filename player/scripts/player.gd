@@ -3,7 +3,12 @@ class_name Player
 
 @export var gravity = 700
 @export var speed = 125
-var jump_force = 350
+var jump_force: float = 150
+var jump_hold: bool = false
+
+var max_jump_height: float = 50 
+var jump_start_y: float = 0 
+var is_jumping: bool = false #
 
 var friction = 800
 
@@ -20,16 +25,27 @@ var wind_direction = 0
 
 func _physics_process(delta):
 	# Apply gravity if not on the floor
-	if is_on_floor() == false:
+	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Jump logic
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump(jump_force)
+	# Handle jump
+	if Input.is_action_pressed("jump") and is_jumping and jump_hold:
+		# Stop jumping if maximum height is reached
+		if position.y <= jump_start_y - max_jump_height:
+			jump_hold = false
+		else:
+			velocity.y = -jump_force
 
-	# Cap vertical velocity
-	if velocity.y >= 500:
-		velocity.y = 500
+	# Allow the jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = -jump_force
+		jump_hold = true
+		is_jumping = true
+		jump_start_y = position.y
+
+	## Cap vertical velocity
+	#if velocity.y >= 500:
+		#velocity.y = 500
 
 	# Handle knockback
 	if is_knocked_back:
@@ -56,8 +72,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func jump(force):
-	velocity.y = -force
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("jump"):
+		jump_hold = false
+		is_jumping = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bubble"):

@@ -50,7 +50,7 @@ timerPlacer3 = NodePath("TimerBubblePlacer3")
 position = Vector2(191, 118)
 
 [node name="CollisionShape2D" parent="Wind/Area2D" index="0"]
-position = Vector2(-36, -162)
+position = Vector2(-35, -477)
 
 [node name="playerScene" parent="." instance=ExtResource("1_hvpdy")]
 position = Vector2(161, 91)
@@ -64,13 +64,13 @@ position = Vector2(160, 102)
 script = ExtResource("5_kthyn")
 
 [node name="TimerBubblePlacer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="TimerBubblePlacer2" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="TimerBubblePlacer3" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="leftWall" type="StaticBody2D" parent="."]
 position = Vector2(-3, 75)

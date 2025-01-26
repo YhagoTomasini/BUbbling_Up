@@ -1,8 +1,8 @@
 extends Camera2D
 
-var target_position = Vector2.ZERO
-var smoothing_speed = 10.0
-var shake_threshold = 2.0 
+var target_position: Vector2 = Vector2.ZERO
+var smoothing_speed: float = 6.0
+var shake_threshold: float = 1.0
 
 func _ready() -> void:
 	make_current()
