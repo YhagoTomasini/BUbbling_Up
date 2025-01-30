@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjkpdgocrjw"]
+[gd_scene load_steps=24 format=3 uid="uid://bjkpdgocrjw"]
 
 [ext_resource type="Script" path="res://bubble/scripts/bubble.gd" id="1_lcrgs"]
 [ext_resource type="Texture2D" uid="uid://dlqqoh68fqajm" path="res://designDocs/bubble/bubble.png" id="2_1kwpr"]
@@ -137,12 +137,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sra56"]
-radius = 13.0384
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38iyp"]
-radius = 11.0
-height = 22.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_efy23"]
+radius = 12.0026
 
 [node name="bubbleScene" type="Node2D"]
 
@@ -157,15 +153,13 @@ animation = &"Bubbling"
 [node name="Area2D" type="Area2D" parent="bubble" groups=["bubble"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bubble/Area2D"]
-shape = SubResource("CircleShape2D_sra56")
+position = Vector2(0, 0.25)
+shape = SubResource("CircleShape2D_efy23")
 
 [node name="FloatComponent" parent="bubble" instance=ExtResource("3_y01sx")]
 
 [node name="Timer" type="Timer" parent="bubble"]
 process_callback = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble"]
-shape = SubResource("CapsuleShape2D_38iyp")
 
 [node name="BounceTimer" type="Timer" parent="."]
 wait_time = 0.2
