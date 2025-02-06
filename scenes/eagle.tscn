@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://7wtpol48qm2d"]
+
+[ext_resource type="Texture2D" uid="uid://casc5a5hh7fua" path="res://designDocs/Eagle/Eagle.png" id="1_084s0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_184lj"]
+atlas = ExtResource("1_084s0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vapcs"]
+atlas = ExtResource("1_084s0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlguq"]
+atlas = ExtResource("1_084s0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl4mi"]
+atlas = ExtResource("1_084s0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dft1u"]
+atlas = ExtResource("1_084s0")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph51m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_184lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vapcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlguq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl4mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dft1u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Eagle" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ph51m")
+frame_progress = 0.941533

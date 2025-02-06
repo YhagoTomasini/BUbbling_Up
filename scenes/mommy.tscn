@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://sd2f5sljqnh6"]
+
+[ext_resource type="Texture2D" uid="uid://f0nu5qln7ptd" path="res://designDocs/Mommy/cat_mom_captured.png" id="1_ld0yc"]
+[ext_resource type="Texture2D" uid="uid://d3d80mtmh7ung" path="res://designDocs/Mommy/cat_mom.png" id="2_rmd4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fusl6"]
+atlas = ExtResource("1_ld0yc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d253w"]
+atlas = ExtResource("1_ld0yc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro8h6"]
+atlas = ExtResource("1_ld0yc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c5qk"]
+atlas = ExtResource("2_rmd4a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpgq4"]
+atlas = ExtResource("2_rmd4a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65s05"]
+atlas = ExtResource("2_rmd4a")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ims"]
+atlas = ExtResource("2_rmd4a")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rws1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fusl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d253w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro8h6")
+}],
+"loop": true,
+"name": &"Captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c5qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpgq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65s05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ims")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Mommy" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3rws1")
+animation = &"Captured"
+frame_progress = 0.115714
