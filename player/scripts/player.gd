@@ -22,6 +22,8 @@ var wind_direction = 0
 var bounce_timer = 0.0  # Timer to track bounce delay
 var bounce_duration = 0.2  # Duration of the bounce effect
 
+var max_speed = 400
+
 @onready var anim = $Sprite2D
 
 func _physics_process(delta):
@@ -89,6 +91,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bounce_timer = bounce_duration  # Set the bounce timer duration
 		var normal = (position - area.global_position).normalized()
 		velocity = velocity.bounce(normal) * 3  # Adjust the multiplier for bounce strength
+		velocity = velocity.limit_length(max_speed)
 
 	if area.is_in_group("wind"):
 		var is_wind_left = area.get("is_wind_left")
