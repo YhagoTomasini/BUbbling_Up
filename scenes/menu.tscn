@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://m5xbel3jbelr"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_amse8"]
+[ext_resource type="Script" uid="uid://ddtpcrputoo6y" path="res://scenes/menu.gd" id="1_amse8"]
 [ext_resource type="Texture2D" uid="uid://ca0vg8xi3r14m" path="res://designDocs/BK/menu.png" id="2_71i6v"]
 [ext_resource type="FontFile" uid="uid://mxak6kb2321t" path="res://designDocs/BK/Tiny5/Tiny5-Regular.ttf" id="3_wqm7a"]
 

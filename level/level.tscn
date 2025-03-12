@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://6ex7gcrym3iy"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_85s83"]
+[ext_resource type="Script" uid="uid://beowdnpyr88b" path="res://scenes/game.gd" id="1_85s83"]
 [ext_resource type="Texture2D" uid="uid://ci8cdfm1yp2ev" path="res://assets/tilemapTest.png" id="1_e30dx"]
 [ext_resource type="PackedScene" uid="uid://dbrw2tmrd27fh" path="res://player/player.tscn" id="1_hvpdy"]
 [ext_resource type="Texture2D" uid="uid://bhuq7xkcsuxt2" path="res://designDocs/BK/Montain.png" id="3_iu775"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bakpfrlg0yon0" path="res://designDocs/BK/ground.png" id="4_g4sik"]
 [ext_resource type="Texture2D" uid="uid://csk6qf2lpdfts" path="res://designDocs/BK/Ground-Troncol.png" id="4_hy26b"]
 [ext_resource type="Texture2D" uid="uid://ti86oqg8e4e5" path="res://designDocs/tilemap/branch.png" id="5_hd7ik"]
-[ext_resource type="Script" path="res://level/camera.gd" id="5_kthyn"]
+[ext_resource type="Script" uid="uid://pafjoxmoutko" path="res://level/camera.gd" id="5_kthyn"]
 [ext_resource type="Texture2D" uid="uid://bx6icdwxliyqe" path="res://designDocs/BK/Tronco-middle.png" id="6_l8wf4"]
 [ext_resource type="Texture2D" uid="uid://dmbhvnuos8hoj" path="res://designDocs/tilemap/bush.png" id="7_rxlnl"]
 [ext_resource type="Texture2D" uid="uid://be78gs8x1xbby" path="res://designDocs/tilemap/clouds.png" id="8_kooqt"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cxdjemdnkb07u" path="res://designDocs/P2 anims/P2-Bubbling.png" id="1_57n8t"]
 [ext_resource type="Texture2D" uid="uid://dvhq4ij7gyqng" path="res://designDocs/P2 anims/P2-Idle.png" id="2_rq3mq"]
-[ext_resource type="Script" path="res://scenes/player_2.gd" id="3_nnmrk"]
+[ext_resource type="Script" uid="uid://die8ij7yvqs8f" path="res://scenes/player_2.gd" id="3_nnmrk"]
 [ext_resource type="AudioStream" uid="uid://dk7a33f2udy8u" path="res://designDocs/audios/bubble-2.wav" id="4_fh406"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yk2es"]
