@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dbrw2tmrd27fh"]
+[gd_scene load_steps=36 format=3 uid="uid://dbrw2tmrd27fh"]
 
 [ext_resource type="Texture2D" uid="uid://bcdb1xyf6lg1b" path="res://designDocs/P1 anims/P1-Falling.png" id="2_cscq8"]
 [ext_resource type="Script" uid="uid://c8glv0hcy6eau" path="res://player/scripts/player.gd" id="2_hhaak"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://qg7cjr4w8yb4" path="res://designDocs/P1 anims/P1-walk.png" id="6_sh2ql"]
 [ext_resource type="AudioStream" uid="uid://c1bha3ahdkwf3" path="res://designDocs/audios/jump-sound.wav" id="7_g33h1"]
 [ext_resource type="AudioStream" uid="uid://dbxnew3mc3uoh" path="res://designDocs/audios/passos.wav" id="8_my55b"]
+[ext_resource type="Script" uid="uid://dfvim24g73lm" path="res://bubble/scripts/StateMachine.gd" id="9_ebec5"]
+[ext_resource type="Script" uid="uid://co6e8esywi3y6" path="res://player/scripts/states/PlayerIdle.gd" id="10_yllr7"]
+[ext_resource type="Script" uid="uid://dqqa68drh2g8y" path="res://player/scripts/states/PlayerMove.gd" id="11_kb6p2"]
+[ext_resource type="Script" uid="uid://do3avv5y8owga" path="res://player/scripts/states/PlayerFall.gd" id="12_wodsf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rd0an"]
 atlas = ExtResource("2_cscq8")
@@ -208,6 +212,21 @@ stream = ExtResource("7_g33h1")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_my55b")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("9_ebec5")
+
+[node name="PlayerIdle" type="Node" parent="StateMachine"]
+script = ExtResource("10_yllr7")
+
+[node name="PlayerMove" type="Node" parent="StateMachine"]
+script = ExtResource("11_kb6p2")
+
+[node name="PlayerFall" type="Node" parent="StateMachine"]
+script = ExtResource("12_wodsf")
+
+[node name="PlayerStunned" type="Node" parent="StateMachine"]
+script = ExtResource("10_yllr7")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

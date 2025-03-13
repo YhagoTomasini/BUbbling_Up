@@ -27,12 +27,12 @@ var max_speed = 400
 @onready var anim = $Sprite2D
 
 func _physics_process(delta):
-	# Handle bounce timer
-	if is_bouncing:
-		bounce_timer -= delta
-		if bounce_timer <= 0:
-			is_bouncing = false
-
+	## Handle bounce timer
+	#if is_bouncing:
+		#bounce_timer -= delta
+		#if bounce_timer <= 0:
+			#is_bouncing = false
+#
 	if not is_bouncing:
 		# Apply gravity if not on the floor
 		if not is_on_floor():
@@ -44,41 +44,42 @@ func _physics_process(delta):
 			anim.play("Falling")
 		elif velocity.y < 0:
 			anim.play("Jump")
-			
-		# Handle jump
-		if Input.is_action_pressed("jump") and is_jumping and jump_hold:
-			
-			# Stop jumping if maximum height is reached
-			if position.y <= jump_start_y - max_jump_height:
-				jump_hold = false
-			else:
-				velocity.y = -jump_force
-
-		# Allow the jump
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			jump_sound.play()
-			velocity.y = -jump_force
-			jump_hold = true
-			is_jumping = true
-			jump_start_y = position.y
-
-		else:
-			# Player movement
-			var direction = Input.get_axis("left", "right")
-			if direction != 0:
-				velocity.x = direction * speed
-			elif is_on_floor():
-				velocity.x = move_toward(velocity.x, 0, friction * delta)
-			if direction:
-				anim.scale.x = -1 if direction < 0 else 1
-			elif is_on_floor():
-				anim.play("Idle")
-
-	# Apply continuous wind force
-	if wind_direction != 0:
-		velocity.x += wind_force * wind_direction * delta
-
-	move_and_slide()
+			#
+		## Handle jump
+		#if Input.is_action_pressed("jump") and is_jumping and jump_hold:
+			#
+			## Stop jumping if maximum height is reached
+			#if position.y <= jump_start_y - max_jump_height:
+				#jump_hold = false
+			#else:
+				#velocity.y = -jump_force
+#
+		## Allow the jump
+		#if Input.is_action_just_pressed("jump") and is_on_floor():
+			#jump_sound.play()
+			#velocity.y = -jump_force
+			#jump_hold = true
+			#is_jumping = true
+			#jump_start_y = position.y
+#
+		#else:
+			## Player movement
+			#var direction = Input.get_axis("left", "right")
+			#if direction != 0:
+				#velocity.x = direction * speed
+			#elif is_on_floor():
+				#velocity.x = move_toward(velocity.x, 0, friction * delta)
+			#if direction:
+				#anim.scale.x = -1 if direction < 0 else 1
+			#elif is_on_floor():
+				#anim.play("Idle")
+#
+	## Apply continuous wind force
+	#if wind_direction != 0:
+		#velocity.x += wind_force * wind_direction * delta
+#
+	#move_and_slide()
+	#pass
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump"):
