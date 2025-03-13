@@ -38,12 +38,12 @@ func _physics_process(delta):
 		if not is_on_floor():
 			velocity.y += gravity * delta
 
-		elif velocity.x != 0:
-			anim.play("Walk")
-		if velocity.y > 0:
-			anim.play("Falling")
-		elif velocity.y < 0:
-			anim.play("Jump")
+		#elif velocity.x != 0:
+			#anim.play("Walk")
+		#if velocity.y > 0:
+			#anim.play("Falling")
+		#elif velocity.y < 0:
+			#anim.play("Jump")
 			#
 		## Handle jump
 		#if Input.is_action_pressed("jump") and is_jumping and jump_hold:

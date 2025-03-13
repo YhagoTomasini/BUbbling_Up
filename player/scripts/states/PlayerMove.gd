@@ -12,10 +12,10 @@ func physics_update(_delta: float) -> void:
 
 	if not player.is_bouncing:
 		# Apply gravity if not on the floor
-		if not player.is_on_floor():
-			player.velocity.y += player.gravity * _delta
+		#if not player.is_on_floor():
+			#player.velocity.y += player.gravity * _delta
 
-		elif player.velocity.x != 0:
+		if player.velocity.x != 0:
 			player.anim.play("Walk")
 		if player.velocity.y > 0:
 			player.anim.play("Falling")
