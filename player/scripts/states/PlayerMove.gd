@@ -1,7 +1,9 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	pass
+	# Handle jump if carried over from Idle
+	if data.has("jump") and data["jump"] and player.is_on_floor():
+		player.is_jumping_from_idle = true
 
 func physics_update(_delta: float) -> void:
 	# Handle bounce timer
@@ -11,9 +13,18 @@ func physics_update(_delta: float) -> void:
 			player.is_bouncing = false
 
 	if not player.is_bouncing:
-		# Apply gravity if not on the floor
-		#if not player.is_on_floor():
-			#player.velocity.y += player.gravity * _delta
+		player.velocity.x = get_input_velocity() * player.move_speed
+
+		if (Input.is_action_just_pressed("jump") or player.is_jumping_from_idle) and player.is_on_floor():
+			player.is_jumping_from_idle = false
+			player.velocity.y = player.jump_velocity
+			player.jump_sound.play()
+		
+		var direction = get_input_velocity()
+		if direction:
+			player.anim.scale.x = -1 if direction < 0 else 1
+		elif player.is_on_floor():
+			finished.emit(IDLE)
 
 		if player.velocity.x != 0:
 			player.anim.play("Walk")
@@ -21,41 +32,22 @@ func physics_update(_delta: float) -> void:
 			player.anim.play("Falling")
 		elif player.velocity.y < 0:
 			player.anim.play("Jump")
-			
-		# Handle jump
-		if Input.is_action_pressed("jump") and player.is_jumping and player.jump_hold:
-			
-			# Stop jumping if maximum height is reached
-			if player.position.y <= player.jump_start_y - player.max_jump_height:
-				player.jump_hold = false
-			else:
-				player.velocity.y = -player.jump_force
 
-		# Allow the jump
-		if Input.is_action_just_pressed("jump") and player.is_on_floor():
-			player.jump_sound.play()
-			player.velocity.y = -player.jump_force
-			player.jump_hold = true
-			player.is_jumping = true
-			player.jump_start_y = player.position.y
-
-		else:
-			# Player movement
-			var direction = Input.get_axis("left", "right")
-			if direction != 0:
-				player.velocity.x = direction * player.speed
-			elif player.is_on_floor():
-				player.velocity.x = move_toward(player.velocity.x, 0, player.friction * _delta)
-			if direction:
-				player.anim.scale.x = -1 if direction < 0 else 1
-			elif player.is_on_floor():
-				player.anim.play("Idle")
-
-	# Apply continuous wind force
-	if player.wind_direction != 0:
-		player.velocity.x += player.wind_force * player.wind_direction * _delta
+	## Apply continuous wind force
+	#if player.wind_direction != 0:
+		#player.velocity.x += player.wind_force * player.wind_direction * _delta
 
 	player.move_and_slide()
+
+func get_input_velocity() -> float:
+	var horizontal := 0.0
+	
+	if Input.is_action_pressed("left"):
+		horizontal -= 1.0
+	if Input.is_action_pressed("right"):
+		horizontal += 1.0
+	
+	return horizontal
 
 func exit():
 	pass
