@@ -30,10 +30,17 @@ var max_speed: float = 400
 @onready var anim = $Sprite2D
 
 func _physics_process(delta):
-	if not is_bouncing:
+	# Handle bounce timer
+	if is_bouncing:
+		bounce_timer -= delta
+		if bounce_timer <= 0:
+			is_bouncing = false
+
+	else:
 		if not is_on_floor():
 			velocity.y += gravity * delta
 
+	move_and_slide()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bubble"):

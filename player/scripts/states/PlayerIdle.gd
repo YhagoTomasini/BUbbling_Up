@@ -15,7 +15,7 @@ func physics_update(_delta: float) -> void:
 
 	if jump_pressed or moving:
 		finished.emit(MOVING, {"jump": jump_pressed})  # Pass jump info
-	player.move_and_slide()
+
 
 func exit():
 	pass

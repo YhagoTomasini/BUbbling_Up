@@ -6,11 +6,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 		player.is_jumping_from_idle = true
 
 func physics_update(_delta: float) -> void:
-	# Handle bounce timer
-	if player.is_bouncing:
-		player.bounce_timer -= _delta
-		if player.bounce_timer <= 0:
-			player.is_bouncing = false
+	
 
 	if not player.is_bouncing:
 		player.velocity.x = get_input_velocity() * player.move_speed
@@ -37,7 +33,6 @@ func physics_update(_delta: float) -> void:
 	#if player.wind_direction != 0:
 		#player.velocity.x += player.wind_force * player.wind_direction * _delta
 
-	player.move_and_slide()
 
 func get_input_velocity() -> float:
 	var horizontal := 0.0
