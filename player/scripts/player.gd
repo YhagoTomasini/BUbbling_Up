@@ -25,7 +25,7 @@ var bounce_duration = 0.2  # Duration of the bounce effect
 var wind_force = 0
 var wind_direction = 0
 
-var max_speed: float = 400
+var max_speed: float = 500
 
 @onready var anim = $Sprite2D
 

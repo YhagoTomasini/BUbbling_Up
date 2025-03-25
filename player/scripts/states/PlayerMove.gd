@@ -19,7 +19,7 @@ func physics_update(_delta: float) -> void:
 		var direction = get_input_velocity()
 		if direction:
 			player.anim.scale.x = -1 if direction < 0 else 1
-		elif player.is_on_floor():
+		elif player.is_on_floor() and player.velocity.x == 0 and player.velocity.y == 0:
 			finished.emit(IDLE)
 
 		if player.velocity.x != 0:
